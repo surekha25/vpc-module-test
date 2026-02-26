@@ -1,5 +1,5 @@
 module "aws_vpc" {
-    source = "../terraform-aws-vpc"
+    source = "git::https://github.com/surekha25/terraform-aws-vpc.git?ref=main"
     # vpc_cidr =  "10.0.0.0/16"
     # project_name = "roboshop"
     # environment = "dev"
@@ -13,11 +13,4 @@ module "aws_vpc" {
     database_subnet_cidrs = var.database_subnet_cidrs
     is_peering_required = false
 }
-
-output "vpc_id" {
-    value = module.aws_vpc.vpc_id
-}
-
-output "igw" {
-    value = module.aws_vpc.igw
-}   
+  
